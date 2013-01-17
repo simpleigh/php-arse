@@ -1,0 +1,5 @@
+ARG_ENABLE("arse", "enable arse support", "no");
+
+if (PHP_ARSE != "no") {
+	EXTENSION("arse", "arse.c");
+}
