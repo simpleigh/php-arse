@@ -18,10 +18,4 @@ extern zend_module_entry arse_module_entry;
 
 PHP_FUNCTION(arse);
 
-#ifdef ZTS
-#define ARSE_G(v) TSRMG(arse_globals_id, zend_arse_globals *, v)
-#else
-#define ARSE_G(v) (arse_globals.v)
-#endif
-
 #endif	/* PHP_ARSE_H */

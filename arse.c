@@ -7,25 +7,18 @@
 #include "ext/standard/info.h"
 #include "php_arse.h"
 
-/* True global resources - no need for thread safety here */
-static int le_arse;
-
 /* {{{ arse_functions[]
- *
- * Every user visible function must have an entry in arse_functions[].
  */
 const zend_function_entry arse_functions[] = {
-	PHP_FE(arse,	NULL)
-	PHP_FE_END	/* Must be the last line in arse_functions[] */
+	PHP_FE(arse, NULL)
+	PHP_FE_END
 };
 /* }}} */
 
 /* {{{ arse_module_entry
  */
 zend_module_entry arse_module_entry = {
-#if ZEND_MODULE_API_NO >= 20010901
 	STANDARD_MODULE_HEADER,
-#endif
 	"arse",
 	arse_functions,
 	NULL,
@@ -33,9 +26,7 @@ zend_module_entry arse_module_entry = {
 	NULL,
 	NULL,
 	NULL,
-#if ZEND_MODULE_API_NO >= 20010901
-	"0.1", /* Replace with version number for your extension */
-#endif
+	"0.1",
 	STANDARD_MODULE_PROPERTIES
 };
 /* }}} */
