@@ -11,16 +11,14 @@ ZEND_ARG_INFO(0, count)
 ZEND_END_ARG_INFO()
 /* }}} */
 
-/* {{{ arse_functions[]
- */
+/* {{{ arse_functions[] */
 const zend_function_entry arse_functions[] = {
 	PHP_FE(arse, arginfo_arse)
 	PHP_FE_END
 };
 /* }}} */
 
-/* {{{ arse_module_entry
- */
+/* {{{ arse_module_entry */
 zend_module_entry arse_module_entry = {
 	STANDARD_MODULE_HEADER,
 	"arse",
@@ -39,8 +37,7 @@ zend_module_entry arse_module_entry = {
 ZEND_GET_MODULE(arse)
 #endif
 
-/* {{{ proto  arse()
-    */
+/* {{{ proto  arse(integer count) */
 PHP_FUNCTION(arse)
 {
 	long l = 1;
@@ -52,9 +49,9 @@ PHP_FUNCTION(arse)
 		php_error(E_ERROR, "Invalid number of arses");
 	}
 
-	for (; l>0; l--)
+	for (; l>0; l--) {
 		php_printf("You're an arse!\n");
-		//printf("You're an arse!\n");
+	}
 
 	return;
 }
