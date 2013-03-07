@@ -5,10 +5,16 @@
 #include "php.h"
 #include "php_arse.h"
 
+/* {{{ arginfo_arse */
+ZEND_BEGIN_ARG_INFO(arginfo_arse, 0)
+ZEND_ARG_INFO(0, count)
+ZEND_END_ARG_INFO()
+/* }}} */
+
 /* {{{ arse_functions[]
  */
 const zend_function_entry arse_functions[] = {
-	PHP_FE(arse, NULL)
+	PHP_FE(arse, arginfo_arse)
 	PHP_FE_END
 };
 /* }}} */
